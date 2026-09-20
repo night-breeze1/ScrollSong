@@ -26,8 +26,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ===== 路径配置 =====
 BASE_DIR = Path(__file__).parent.resolve()
-TEMP_DIR = Path("/data/user/work/lyric_render")
-OUTPUT_DIR = Path("/data/user/work/lyric_output")
+# data 目录与 lyric-video-generator 同级，避免在盘符根目录下生成数据
+DATA_DIR = BASE_DIR.parent / "data" / "user" / "work"
+TEMP_DIR = DATA_DIR / "lyric_render"
+OUTPUT_DIR = DATA_DIR / "lyric_output"
 TEMP_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
